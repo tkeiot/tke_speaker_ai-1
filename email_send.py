@@ -19,9 +19,9 @@ app_password = app_pass  # Mật khẩu ứng dụng app password
 receiver_email = recei_email # Email nhận
 
 # Thông tin người gửi và người nhận
-#sender_email = "chatrobotrux@gmail.com"   # Emai gửi
-#app_password = "yoqz ltym shqx ugpw"  # Mật khẩu ứng dụng app password 
-#receiver_email = "ngoctung2008@gmail.com" # Email nhận
+#sender_email = "chatrux@gmail.com"   # Emai gửi
+#app_password = "xxxx"  # Mật khẩu ứng dụng app password 
+#receiver_email = "ngoc@gmail.com" # Email nhận
 
 def send_email():
     
