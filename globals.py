@@ -33,3 +33,4 @@ text_zing = None
 text_youtube = None
 stop_zing = 0
 stop_bt_zing = 0
+program_update = 0
