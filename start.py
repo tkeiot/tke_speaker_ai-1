@@ -1,9 +1,4 @@
-
-from wakeup import *
-
+from wakeup import main_tke
 if __name__ == '__main__':  
-    check_wifi()
-    check_class_ip()
-    picovoice()
-
+    main_tke()
 
