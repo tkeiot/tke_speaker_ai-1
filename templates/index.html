@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Thiết lập thông số</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff; /* Màu nền nhạt */
+            color: #333; /* Màu chữ */
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50; /* Màu tiêu đề xanh lá cây */
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #4CAF50; /* Khung xung quanh form */
+            border-radius: 10px; /* Bo góc */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng */
+        }
+
+        label {
+            display: inline-block;
+            width: 300px;
+            font-weight: bold;
+            color: #4CAF50; /* Màu của label */
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: calc(100% - 100px); /* Đảm bảo input đủ rộng */
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #4CAF50; /* Màu nền của nút */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Hiệu ứng hover */
+        }
+
+        button:hover {
+            background-color: #45a049; /* Màu khi hover */
+        }
+
+        .form-container + .form-container {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Thiết lập thông số cho Speaker AI</h1>
+
+    <!-- Form cho Thông số 1 -->
+    <div class="form-container">
+        <form action="{{ url_for('update_parameter', param='param1') }}" method="POST">
+            <label for="param1">API keys-Picovoice:</label>
+            <input type="text" id="param1" name="param1" value="{{ parameters['_____'] }}">
+            <button type="submit">Lưu </button>
+        </form>
+    </div>
+
+    <!-- Form cho Thông số 2 -->
+    <div class="form-container">
+        <form action="{{ url_for('update_parameter', param='param2') }}" method="POST">
+            <label for="param2">API keys-ChatGPT:</label>
+            <input type="text" id="param2" name="param2" value="{{ parameters['_____'] }}">
+            <button type="submit">Lưu </button>
+        </form>
+    </div>
+
+    <!-- Form cho Thông số 3 -->
+    <div class="form-container">
+        <form action="{{ url_for('update_parameter', param='param3') }}" method="POST">
+            <label for="param3">API keys-Gemini:</label>
+            <input type="text" id="param3" name="param3" value="{{ parameters['_____'] }}">
+            <button type="submit">Lưu </button>
+        </form>
+    </div>
+
+    <!-- Form cho Thông số 4 -->
+    <div class="form-container">
+        <form action="{{ url_for('update_parameter', param='param4') }}" method="POST">
+            <label for="param4">API key-Line Notify:</label>
+            <input type="text" id="param4" name="param4" value="{{ parameters['_____'] }}">
+            <button type="submit">Lưu </button>
+        </form>
+    </div>
+
+    <!-- Form cho Thông số 5 -->
+    <div class="form-container">
+        <form action="{{ url_for('update_parameter', param='param5') }}" method="POST">
+            <label for="param5">API keys Home Assistant:</label>
+            <input type="text" id="param5" name="param5" value="{{ parameters['_____'] }}">
+            <button type="submit">Lưu </button>
+        </form>
+    </div>
+
+    <!-- Form cho Thông số 6 -->
+    <div class="form-container">
+        <form action="{{ url_for('update_parameter', param='param6') }}" method="POST">
+            <label for="param6">TCP-IP Home Assistant:</label>
+            <input type="text" id="param6" name="param6" value="{{ parameters['_____'] }}">
+            <button type="submit">Lưu </button>
+        </form>
+    </div>
+
+    <!-- Form cho Thông số 7 -->
+    <div class="form-container">
+        <form action="{{ url_for('update_parameter', param='param7') }}" method="POST">
+            <label for="param7">subscribe_topic:</label>
+            <input type="text" id="param7" name="param7" value="{{ parameters['_____'] }}">
+            <button type="submit">Lưu </button>
+        </form>
+    </div>
+
+    <!-- Form cho Thông số 8 -->
+    <div class="form-container">
+        <form action="{{ url_for('update_parameter', param='param8') }}" method="POST">
+            <label for="param8">publish_topic:</label>
+            <input type="text" id="param8" name="param8" value="{{ parameters['_____'] }}">
+            <button type="submit">Lưu </button>
+        </form>
+    </div>
+    
+    <!-- Form cho Thông số 9 -->
+    <div class="form-container">
+        <form action="{{ url_for('update_parameter', param='param9') }}" method="POST">
+            <label for="param9">name_device:</label>
+            <input type="text" id="param9" name="param9" value="{{ parameters['_____'] }}">
+            <button type="submit">Lưu </button>
+        </form>
+    </div>
+
+</body>
+</html>
