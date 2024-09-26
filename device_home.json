@@ -1,0 +1,13 @@
+{
+    "sensors": [
+        "Sun Next dawn",
+        "Sun Next dusk",
+        "Sun Next midnight",
+        "Sun Next noon",
+        "Sun Next rising",
+        "Sun Next setting",
+        "Living room switch Battery",
+        "Room Temperature",
+        "Room Humidity"
+    ]
+}
