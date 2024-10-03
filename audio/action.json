@@ -1,0 +1,167 @@
+{
+    "device":[{
+	"value":"đèn"
+	},
+	{
+	"value":"quạt"
+	},
+	{
+	"value":"máy lạnh"
+	},
+	{
+	"value":"máy nước nóng"
+	},
+	{
+	"value":"tivi"
+	},
+	{
+	"value":"máy tính"
+	},
+	{
+	"value":"công tắc"
+	},
+	{
+	"value":"ổ cắm"
+	},
+	{
+	"value":"cửa"
+	}
+	
+    ],
+
+    "on": {
+        "value": "bật"
+    },
+    "off": {
+        "value": "tắt"
+    },
+    "open": {
+        "value": "mở"
+    },
+    "close": {
+        "value": "đóng"
+    },
+    "enable": {
+        "value": "kích hoạt"
+    },
+    "disable": {
+        "value": "vô hiệu"
+    },
+    "display": {
+        "value": "hiển thị"
+    },
+    "check": {
+        "value": "kiểm tra"
+    },
+    "tell": {
+        "value": "kể"
+    },
+    "listen": {
+        "value": "nghe"
+    },
+    "read": {
+        "value": "đọc"
+    },
+    "adjust": {
+        "value": "điều chỉnh"
+    },
+    "change": {
+        "value": "thay đổi"
+    },
+    "continue": {
+        "value": "tiếp tục"
+    },
+    "incrase": {
+        "value": "tăng"
+    },
+    "decrase": {
+        "value": "giảm"
+    },
+    "up": {
+        "value": "lên"
+    },
+    "down": {
+        "value": "xuống"
+    },
+    "connect": {
+        "value": "nối"
+    },
+    "disconnect": {
+        "value": "ngắt"
+    },
+    "sing": {
+        "value": "hát"
+    },
+    "download": {
+        "value": "download"
+    },
+    "upload": {
+        "value": "upload"
+    },
+    "bigger": [{
+            "value": "to hơn"
+        },
+        {
+            "value": "lớn hơn"
+        }
+    ],
+    "smaller": [{
+            "value": "bé đi"
+        },
+        {
+            "value": "nhỏ đi"
+        }
+    ],
+     "temp": [{
+            "value": "nhiệt độ"
+        }
+    ],
+    "play": [{
+            "value": "phát"
+        },
+        {
+            "value": "chơi"
+        },
+	{
+            "value": "mở"
+        },
+	{
+            "value": "tắt"
+        },
+	{
+            "value": "bật"
+        },
+	{
+            "value": "đóng"
+        }
+
+    ],
+    "pause": [{
+            "value": "tạm dừng"
+        },
+        {
+            "value": "tạm ngừng"
+        }
+    ],	
+    "stop": [{
+            "value": "stop"
+        },
+        {
+            "value": "dừng phát"
+        },
+        {
+            "value": "dừng lại"
+        },
+        {
+            "value": "ngừng phát"
+        }
+    ],
+    "send": [{
+            "value": "gửi"
+        },
+        {
+            "value": "chuyển"
+        }
+    ]  
+
+}

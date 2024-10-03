@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Thiết lập thông số</title>
+    <style>
+        /* CSS giữ nguyên */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            margin-bottom: 40px;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .radio-group {
+            margin-top: 10px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .radio-group input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        .radio-group label {
+            margin-right: 20px;
+            color: #333;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .form-container + .form-container {
+            margin-top: 40px;
+        }
+    </style>
+    <script>
+        function checkPassword() {
+            var password = prompt("Vui lòng nhập mật khẩu:");
+            if (password !== "speakerai") {
+                alert("Mật khẩu không đúng. Bạn không thể truy cập trang này.");
+                document.body.style.display = "none";  // Ẩn trang nếu mật khẩu sai
+            } else {
+                document.body.style.display = "block";  // Hiển thị trang nếu mật khẩu đúng
+            }
+        }
+
+        window.onload = checkPassword;  // Gọi hàm khi trang được tải
+
+        // Hàm gửi form bằng AJAX
+        function submitForm(event, url) {
+            event.preventDefault(); // Ngăn không cho trang reload
+
+            // Lấy dữ liệu từ form
+            var formData = new FormData(event.target);
+
+            // Tạo một yêu cầu AJAX để gửi dữ liệu
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', url, true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            // Xử lý kết quả trả về
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    alert('Thông số đã được lưu thành công!');
+                } else if (xhr.readyState == 4) {
+                    alert('Có lỗi xảy ra, vui lòng thử lại.');
+                }
+            };
+
+            // Chuyển đổi FormData sang chuỗi URL-encoded
+            var encodedData = new URLSearchParams(formData).toString();
+
+            // Gửi dữ liệu
+            xhr.send(encodedData);
+        }
+    </script>
+</head>
+<body style="display:none;">
+    <h1>Thiết lập thông số cho tke Speaker ai</h1>
+
+    <!-- Form cho Picovoice -->
+    <div class="form-container">
+        <form onsubmit="submitForm(event, '{{ url_for('update_parameter', param='picovoice') }}')">
+            <div class="form-group">
+                <label for="picovoice">API keys Picovoice:</label>
+                <input type="text" id="picovoice" name="picovoice" value="{{ parameters['picovoice'] }}">
+            </div>
+            <button type="submit">Lưu - API keys Picovoice</button>
+        </form>
+    </div>
+
+    <!-- Form cho Gemini -->
+    <div class="form-container">
+        <form onsubmit="submitForm(event, '{{ url_for('update_parameter', param='gemini') }}')">
+            <div class="form-group">
+                <label for="gemini">API keys Gemini:</label>
+                <input type="text" id="gemini" name="gemini" value="{{ parameters['gemini'] }}">
+            </div>
+            <div class="form-group">
+                <label>Chọn chatbot với Gemini:</label>
+                <div class="radio-group">
+                    <div>
+                        <input type="radio" id="gemini_yes" name="api_gemini" value="true" {% if parameters['api_gemini'] == 'yes' %}checked{% endif %}>
+                        <label for="gemini_yes">Chọn</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="gemini_no" name="api_gemini" value="false" {% if parameters['api_gemini'] == 'no' %}checked{% endif %}>
+                        <label for="gemini_no">Không chọn</label>
+                    </div>
+                </div>
+            </div>
+            <button type="submit">Lưu - API keys Gemini</button>
+        </form>
+    </div>
+
+    <!-- Form cho ChatGPT -->
+    <div class="form-container">
+        <form onsubmit="submitForm(event, '{{ url_for('update_parameter', param='chatgpt') }}')">
+            <div class="form-group">
+                <label for="chatgpt">API keys ChatGPT:</label>
+                <input type="text" id="chatgpt" name="chatgpt" value="{{ parameters['chatgpt'] }}">
+            </div>
+            <div class="form-group">
+                <label>Chọn chatGPT:</label>
+                <div class="radio-group">
+                    <div>
+                        <input type="radio" id="chatgpt_yes" name="api_chatgpt" value="true" {% if parameters['api_chatgpt'] == 'yes' %}checked{% endif %}>
+                        <label for="chatgpt_yes">Chọn</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="chatgpt_no" name="api_chatgpt" value="false" {% if parameters['api_chatgpt'] == 'no' %}checked{% endif %}>
+                        <label for="chatgpt_no">Không chọn</label>
+                    </div>
+                </div>
+            </div>
+            <button type="submit">Lưu - API keys ChatGPT</button>
+        </form>
+    </div>
+
+    <!-- Form cho IP Home Assistant -->
+    <div class="form-container">
+        <form onsubmit="submitForm(event, '{{ url_for('update_parameter', param='ip_home_assitant') }}')">
+            <div class="form-group">
+                <label for="ip_home_assitant">TCP - IP Home Assistant: ví dụ: http://192.168.x.xx:8123 </label>
+                <input type="text" id="ip_home_assitant" name="ip_home_assitant" value="{{ parameters['ip_home_assitant'] }}">
+            </div>
+            <div class="form-group">
+                <label>Chọn sử dụng Home-Assistant:</label>
+                <div class="radio-group">
+                    <div>
+                        <input type="radio" id="home_yes" name="active_home" value="true" {% if parameters['home_yes'] == 'yes' %}checked{% endif %}>
+                        <label for="home_yes">Chọn</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="home_no" name="active_home" value="false" {% if parameters['home_yes'] == 'no' %}checked{% endif %}>
+                        <label for="home_no">Không chọn</label>
+                    </div>
+                </div>
+            </div>
+            <button type="submit">Lưu - IP Home Assistant</button>
+        </form>
+    </div>
+
+    <!-- Form cho API Key Home Assistant -->
+    <div class="form-container">
+        <form onsubmit="submitForm(event, '{{ url_for('update_parameter', param='key_home_assistant') }}')">
+            <div class="form-group">
+                <label for="key_home_assistant">API keys Home Assistant:</label>
+                <input type="text" id="key_home_assistant" name="key_home_assistant" value="{{ parameters['key_home_assistant'] }}">
+            </div>
+            <button type="submit">Lưu - API keys Home Assistant</button>
+        </form>
+    </div>
+
+    <!-- Form cho API Key Line Notify -->
+    <div class="form-container">
+        <form onsubmit="submitForm(event, '{{ url_for('update_parameter', param='key_line_notify') }}')">
+            <div class="form-group">
+                <label for="key_line_notify">API keys Line Notify:</label>
+                <input type="text" id="key_line_notify" name="key_line_notify" value="{{ parameters['key_line_notify'] }}">
+            </div>
+            <button type="submit">Lưu - API keys Line Notify</button>
+        </form>
+    </div>
+</body>
+</html>
