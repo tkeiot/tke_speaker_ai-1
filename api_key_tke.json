@@ -1,0 +1,11 @@
+{
+    "picovoice": "",
+    "api_gemini": "false",
+    "gemini": "",
+    "api_chatgpt": "true",
+    "chatgpt": "",
+    "ip_home_assitant": "",
+    "active_home": "false",
+    "key_home_assistant": "",
+    "key_line_notify": ""
+}
