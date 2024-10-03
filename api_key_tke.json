@@ -6,6 +6,6 @@
     "chatgpt": "",
     "ip_home_assitant": "",
     "active_home": "false",
-    "key_home_assistant": "",
+    "key_home_assistant": "192.168.0.100:8123",
     "key_line_notify": ""
 }
