@@ -3,6 +3,9 @@ import ast
 import socket
 import json
 import os
+import subprocess
+
+
 # Web (Flask) setup
 app = Flask(__name__)
 JSON_FILE = '/home/pi/tke_speaker_ai/api_key_tke.json'
@@ -49,5 +52,14 @@ def update_parameter(param):
 
     write_parameters(parameters)
     return redirect(url_for('index'))
+    
+@app.route('/reset_parameters', methods=['POST'])
+def reset_parameters():
+    try:
+        # Khởi động lại hệ thống
+        subprocess.Popen(['sudo', 'reboot'], shell=False)
+        return "Hệ thống đang khởi động lại...", 200
+    except Exception as e:
+        return str(e), 500    
 
-
+    
