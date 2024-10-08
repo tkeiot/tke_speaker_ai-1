@@ -16,3 +16,5 @@ Hướng dẫn cài đặt nâng cao:
 - Sau khi biết được địa chỉ IP kết nối Wifi của Raspi -> vào WinSCP trên máy tính (Nếu chưa cài thì vào địa chỉ: https://winscp.net/eng/download.php) Kết nối Rapberry để thấy được Folder:  tke_speaker_ai -> Mở -> bạn thấy các file .JSON . các file này dùng để thiết lập thay đổi các chức năng cho bot
 - File : api_key_tke.json là file chứa các api key cho hệ thống
 - clients_info.json -> cấu hình các subscribe/publish MQTT Broker client 
+- setup_wakeup.json -> thay đổi các file picovoice cho lệnh đánh thức tke speaker ai
+  
