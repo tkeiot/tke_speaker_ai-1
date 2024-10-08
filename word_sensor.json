@@ -1,12 +1,10 @@
 {
-    "word_ssor":[{
-	"value":"cảm biến"
-	},
-	{
-	"value":"sensor"
-	},
-	{
-	"value":"báo động"
-	}
-	]
+    "word_ssor":[
+        {"value":"cảm biến"},
+	{"value":"sensor"},
+	{"value":"báo động"}
+	],
+     "mqtt_sensor":[
+        {"value":"true"}
+        ]       
 }
