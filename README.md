@@ -17,4 +17,4 @@ Hướng dẫn cài đặt nâng cao:
 - File : api_key_tke.json là file chứa các api key cho hệ thống
 - clients_info.json -> cấu hình các subscribe/publish MQTT Broker client 
 - setup_wakeup.json -> thay đổi các file picovoice cho lệnh đánh thức tke speaker ai
-  
+- vvvvvvvvvvv
